@@ -1,8 +1,70 @@
 @use 'variables' as *;
 @use 'reset';
+@use "sass:math";
+$txtcolor: yellow;
+$h1size: 60px;
+
+$grid--column: 60px;
+$grid--gutter: math.div($grid--column, 3);
+$grid--unit:   ($grid--column + $grid--gutter);
+$breakpoint--desktop: (15 * $grid--unit);
+$breakpoint--tablet:  (10 * $grid--unit);
+$breakpoint--phone:   (5 * $grid--unit);
+
+
+html{
+  background-image:linear-gradient(rgb(0, 27, 0), rgb(18, 0, 36));
+    }
+
+nav{
+  font-family: 'Lexend Exa', sans-serif;
+  position:sticky;
+  top:0;
+  width:100%;
+  margin: auto;
+  font-size:20px;
+  //padding:20px;
+  a:hover{
+    background-color:rgb(40, 0, 0);
+  }
+}
+
+.nav {
+  text-align: center;
+  float:left;
+  width:23%;
+  padding:1%;
+  color: yellow;
+  background-color: rgb(180, 0, 0);
+}
+
+.current {
+    background-color:rgb(100, 0, 0);
+}
+
+a{
+  color:pink;
+  display:inline;
+}
+
+p{
+  color:yellow;
+  line-height: 1.5em;
+  width:95%;
+  font-size: 22px;
+  margin:auto;
+  padding-bottom: 20px;
+  text-align:center;
+}
+
+div{
+  font-size: 18px;
+  line-height: 1.5em;
+}
 
 body {
   font-family: $font-stack--reading;
+  font-family: 'Lexend Exa', sans-serif;
 }
 
 h1,
@@ -11,5 +73,65 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $font-stack--headings;
-}
+  font-family: $font-stack--headings;   margin-top:90px;
+  }
+
+.title{
+  text-align: center;
+  font-family: 'Libre Baskerville', serif;  color: $txtcolor; font-size:$h1size; clear:left; padding:30px;
+      }
+
+.folio {
+  display:grid;
+  grid-template-columns: auto;
+  div{
+    margin:5%;
+    margin-top:0px;
+    margin-bottom:35px;
+    display:inline-grid;
+    grid-template-columns: 100%;
+    margin-top:0.5em;
+    color:yellow;
+    }
+  }
+
+iframe {
+ width:100%;
+ height:300px;
+      }
+
+.home{
+  width:350px;
+  margin:auto;
+    }
+
+img{
+  width:250px;
+  }
+
+  .current {
+    background-color:FireBrick;
+          }
+
+@media (min-width: 800px) {
+  .folio{
+    display:grid;
+    grid-template-columns: 50% 50%;
+        }
+    p{
+      width:60%;
+      margin:auto;
+      text-align:center;
+    }
+                          }
+
+@media (min-width: 1200px) {
+  .folio{
+    display:grid;
+    grid-template-columns: 33.33% 33.33% 33.33% ;
+        }
+    p{
+      width:50%;
+      margin:auto;
+      text-align:center;
+    }}
